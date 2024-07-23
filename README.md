@@ -16,4 +16,9 @@ here is the file structure and their brief description:
 You can run:
 
     python cluster.py 
-to calculate the s(Hodge Ranking result) of 70 origin tasks.
+to calculate the s(Hodge Ranking result) of 70 origin tasks. The result will be printed in your terminal. 
+
+run:
+
+    python ability_ana.py
+to solve the average ability mass of five special vision field abilities. And you will get many figures plotted, ignore them if you don't understand them, we will figure that in later version. 
