@@ -5,11 +5,11 @@
 here is the file structure and their brief description:
 
 --data---qs--**combined_2.18.csv**\
-    |　　　　|\
-    |　　　　---**validation.csv**\
-    ----source--**AK_marked_v4.xlsx**\
-          　　　|\
-             　　　---**vision_task.xlsx**\
+　　|　　　　|\
+　　|　　　　---**validation.csv**\
+    　　----source--**AK_marked_v4.xlsx**\
+          　　　　　|\
+             　　　　　---**vision_task.xlsx**\
 
 ## Quick Start
 
