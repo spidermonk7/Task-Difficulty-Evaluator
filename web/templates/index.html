@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Grader</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="welcome">
+            <h1 class="text-center">Welcome to Task Grader!</h1>
+            <button id="startAnalysisButton" class="btn btn-primary btn-block mt-4">Task Difficulty Analysis</button>
+            <button id="startComparisonButton" class="btn btn-secondary btn-block mt-4">Task Difficulty Comparison</button>
+        </div>
+        <div id="app" class="card p-4" style="display: none;">
+            <h1 class="card-title">Task Grader</h1>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskName">Task Name:</label>
+                    <input type="text" class="form-control" id="taskName" name="taskName" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskInput">Task Input (Origin State):</label>
+                    <input type="text" class="form-control" id="taskInput" name="taskInput" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskOutput">Task Output (Target State):</label>
+                    <input type="text" class="form-control" id="taskOutput" name="taskOutput" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskModel">Please select the Task-Ability mapping model:</label>
+                    <select class="form-control" id="taskModel" name="taskModel" required>
+                        <option value="GPT3.5">GPT3.5</option>
+                        <option value="GPT4">GPT4</option>
+                        <option value="GPT4o">GPT4o</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskMass">The mass you want to use:</label>
+                    <select class="form-control" id="taskMass" name="taskMass" required>
+                        <option value="GT">GT</option>
+                        <option value="GPT3.5">GPT3.5</option>
+                        <option value="GPT4">GPT4</option>
+                        <option value="GPT4o">GPT4o</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div id="comparison" class="card p-4" style="display: none;">
+            <h1 class="card-title">Task Difficulty Comparison</h1>
+            <form id="comparisonForm">
+                <div class="form-group">
+                    <label for="taskName1">Task 1 Name:</label>
+                    <input type="text" class="form-control" id="taskName1" name="taskName1" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskInput1">Task 1 Input (Origin State):</label>
+                    <input type="text" class="form-control" id="taskInput1" name="taskInput1" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskOutput1">Task 1 Output (Target State):</label>
+                    <input type="text" class="form-control" id="taskOutput1" name="taskOutput1" required>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="taskName2">Task 2 Name:</label>
+                    <input type="text" class="form-control" id="taskName2" name="taskName2" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskInput2">Task 2 Input (Origin State):</label>
+                    <input type="text" class="form-control" id="taskInput2" name="taskInput2" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskOutput2">Task 2 Output (Target State):</label>
+                    <input type="text" class="form-control" id="taskOutput2" name="taskOutput2" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskModelC">Please select the Task-Ability mapping model:</label>
+                    <select class="form-control" id="taskModelC" name="taskModelC" required>
+                        <option value="GPT3.5">GPT3.5</option>
+                        <option value="GPT4">GPT4</option>
+                        <option value="GPT4o">GPT4o</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskMassC">The mass you want to use:</label>
+                    <select class="form-control" id="taskMassC" name="taskMassC" required>
+                        <option value="GT">GT</option>
+                        <option value="GPT3.5">GPT3.5</option>
+                        <option value="GPT4">GPT4</option>
+                        <option value="GPT4o">GPT4o</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- 引入jQuery和Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

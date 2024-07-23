@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comparison Result</title>
+        <!-- Include Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .comparison-card {
+                background-color: #f9f9f9;
+                border: 2px solid #17a2b8;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-top: 20px;
+                padding: 30px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .comparison-card-header {
+                background-color: #17a2b8;
+                color: white;
+                font-weight: bold;
+                font-size: 2rem;
+                padding: 20px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                text-align: center;
+            }
+            .comparison-card-body {
+                padding: 30px;
+            }
+            .comparison-card-text {
+                font-size: 2rem;
+                color: #333;
+                text-align: center;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container mt-10">
+        <div class="card p-4">
+            <h1 class="card-title">Comparison Report</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card comparison-card">
+                        <div class="card-header comparison-card-header">Comparison Result</div>
+                        <div class="card-body comparison-card-body">
+                            <p class="card-text comparison-card-text" id="compareResult">Your comparison result goes here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Task 1 Name</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskName1Box"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-header">Task 1 Input</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskInput1Box"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-header">Task 1 Output</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskOutput1Box"></p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Task 2 Name</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskName2Box"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-header">Task 2 Input</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskInput2Box"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-header">Task 2 Output</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskOutput2Box"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-header">Selected Mass Data</div>
+                    <div class="card-body">
+                        <img id="massDataPlot1" src="" class="img-fluid" alt="Mass Data Plot 1">
+                        <p class="card-text" id="taskMassDataC"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Task 1 Required Abilities</div>
+                        <div class="card-body">
+                            <img id="AbilityPlot1" src="" class="img-fluid" alt="Task 1 Required Abilities">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Task 2 Required Abilities</div>
+                        <div class="card-body">
+                            <img id="AbilityPlot2" src="" class="img-fluid" alt="Task 2 Required Abilities">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card text-white bg-secondary mb-3">
+                        <div class="card-header">Task1 Difficulty Value</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskDiff1Box"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-white bg-secondary mb-3">
+                        <div class="card-header">Task2 Difficulty Value</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskDiff2Box"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="/" class="btn btn-secondary mt-3">Go Back</a>
+        </div>
+    </div>
+    <!-- 引入jQuery和Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='comparison-output.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial  -scale=1.0">
+    <title>Comparison Result</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .comparison-card {
+            background-color: #f9f9f9;
+            border: 2px solid #17a2b8;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .comparison-card-header {
+            background-color: #17a2b8;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .comparison-card-body {
+            padding: 20px;
+        }
+        .comparison-card-text {
+            font-size: 1.25rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card p-4">
+            <h1 class="card-title">Task Result</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Task Name</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskNameBox"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-header">Task Input</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskInputBox"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-header">Task Output</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskOutputBox"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-header">Selected Ability Mass</div>
+                        <div class="card-body">
+                            <img id="massDataPlot" src="" class="img-fluid" alt="Mass Data Plot">
+                            <p class="card-text" id="taskMassData"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-header">Task Required Abilities</div>
+                        <div class="card-body">
+                            <img id="abilityPlot" src="" class="img-fluid" alt="Required Abilities Plot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-white bg-secondary mb-3">
+                        <div class="card-header">Task Difficulty value</div>
+                        <div class="card-body">
+                            <p class="card-text" id="taskDiff"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <a href="/" class="btn btn-secondary mt-3">Go Back</a>
+        </div>
+    </div>
+    <!-- 引入jQuery和Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='output.js') }}"></script>
+</body>
+</html>
